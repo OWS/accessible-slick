@@ -887,10 +887,11 @@
 
         var _ = this, originalSlides;
 
-        if(_.options.rows > 0) {
-            originalSlides = _.$slides.children().children();
+        if(_.options.rows > 1) {
+            originalSlides = _.$slides.children().children().clone(true);
             originalSlides.removeAttr('style');
-            _.$slider.empty().append(originalSlides);
+            _.$slider.get(0).innerHTML = '';
+            _.$slider.append(originalSlides);
         }
 
     };
