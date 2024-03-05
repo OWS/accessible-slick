@@ -9,7 +9,7 @@ As seen in [WEBPLT-9816](https://jira.mercatus.com/browse/WEBPLT-9816) - event l
 Slick.prototype.cleanUpRows = function() {
     var _ = this, originalSlides;
 
-    if(_.options.rows > 1) {
+    if(_.options.rows > 0) {
         originalSlides = _.$slides.children().children().clone(true);
         originalSlides.removeAttr('style');
         _.$slider.get(0).innerHTML = '';
