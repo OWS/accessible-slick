@@ -883,12 +883,18 @@
 
     };
 
-    Slick.prototype.cleanUpRows = function() {
+    Slick.prototype.cleanUpRows = function(initializing) {
 
         var _ = this, originalSlides;
 
-        if(_.options.rows > 0) {
+        if (initializing) {
+            // NOTE: We want to reuse the same element, so it contents continues to be loaded while initializing.
+            originalSlides = _.$slides.children().children();
+        } else {
             originalSlides = _.$slides.children().children().clone(true);
+        }
+
+        if(_.options.rows > 0) {
             originalSlides.removeAttr('style');
             _.$slider.get(0).innerHTML = '';
             _.$slider.append(originalSlides);
@@ -908,7 +914,7 @@
 
     };
 
-    Slick.prototype.destroy = function(refresh) {
+    Slick.prototype.destroy = function(refresh, initializing) {
 
         var _ = this;
 
@@ -972,7 +978,7 @@
             _.$slider.append(_.$slides);
         }
 
-        _.cleanUpRows();
+        _.cleanUpRows(initializing);
 
         _.$slider.removeClass('slick-slider');
         _.$slider.removeClass('slick-initialized');
@@ -1835,7 +1841,7 @@
 
         currentSlide = _.currentSlide;
 
-        _.destroy(true);
+        _.destroy(true, initializing);
 
         $.extend(_, _.initials, { currentSlide: currentSlide });
 
