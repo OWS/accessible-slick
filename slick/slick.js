@@ -883,16 +883,11 @@
 
     };
 
-    Slick.prototype.cleanUpRows = function(initializing) {
+    Slick.prototype.cleanUpRows = function() {
 
         var _ = this, originalSlides;
 
-        if (initializing) {
-            // NOTE: We want to reuse the same element, so it contents continues to be loaded while initializing.
             originalSlides = _.$slides.children().children();
-        } else {
-            originalSlides = _.$slides.children().children().clone(true);
-        }
 
         if(_.options.rows > 0) {
             originalSlides.removeAttr('style');
@@ -914,7 +909,7 @@
 
     };
 
-    Slick.prototype.destroy = function(refresh, initializing) {
+    Slick.prototype.destroy = function(refresh) {
 
         var _ = this;
 
@@ -978,7 +973,7 @@
             _.$slider.append(_.$slides);
         }
 
-        _.cleanUpRows(initializing);
+        _.cleanUpRows();
 
         _.$slider.removeClass('slick-slider');
         _.$slider.removeClass('slick-initialized');
@@ -1841,7 +1836,7 @@
 
         currentSlide = _.currentSlide;
 
-        _.destroy(true, initializing);
+        _.destroy(true);
 
         $.extend(_, _.initials, { currentSlide: currentSlide });
 
