@@ -11,8 +11,8 @@
   Author: Jason Webb (Accessible360)
  Website: https://accessible360.com
     Docs: https://accessible360.github.io/accessible-slick
-    Repo: https://github.com/Accessible360/accessible-slick
-  Issues: https://github.com/Accessible360/accessible-slick/issues
+    Repo: https://github.com/OWS/accessible-slick
+  Issues: https://github.com/OWS/accessible-slick/issues
 
  */
 /* global window, document, define, jQuery, setInterval, clearInterval */

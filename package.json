@@ -1,11 +1,11 @@
 {
-  "name": "@accessible360/accessible-slick",
-  "version": "1.0.1",
-  "description": "the last (accessible) carousel you'll ever need",
+  "name": "@aows/accessible-slick",
+  "version": "1.0.2",
+  "description": " The last (accessible) carousel you'll ever need, compatible with jquery 4.x.",
   "main": "slick/slick.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Accessible360/accessible-slick.git"
+    "url": "git+https://github.com/OWS/accessible-slick.git"
   },
   "keywords": [
     "accessible",
@@ -18,7 +18,7 @@
     "slider",
     "jquery-plugin"
   ],
-  "author": "Accessible360 <jwebb@accessible360.com>",
+  "author": "Axess Open Web Services <contact@ows.fr>",
   "contributors": [
     {
       "name": "jason webb",
@@ -51,26 +51,24 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Accessible360/accessible-slick/issues"
+    "url": "https://github.com/OWS/accessible-slick/issues"
+  },
+  "engines": {
+    "yarn": ">=1.6",
+    "node": ">=20.0"
   },
   "peerDependencies": {
     "jquery": ">=3.5.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "del": "^5.1.0",
-    "grunt": "^1.2.1",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^5.0.0",
-    "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.1.0",
-    "gulp": "^4.0.2",
+    "autoprefixer": "^10.4.0",
+    "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.14.1"
+    "rimraf": "^6.0.1",
+    "sass": "^1.78.0"
   },
   "browserslist": [
     "last 2 versions"

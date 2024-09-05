@@ -195,9 +195,6 @@ npm install
 ```sh
 # Build with Gulp (see gulpfile.js)
 gulp
-
-# OR build with Grunt (see gruntfile.js)
-grunt
 ```
 
 4. Check your changes by loading up `docs/index.html` in your browser.
