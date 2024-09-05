@@ -7,7 +7,7 @@
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.1@accessible360.1
+ Version: 1.0.2@accessible360.1
   Author: Jason Webb (Accessible360)
  Website: https://accessible360.com
     Docs: https://accessible360.github.io/accessible-slick
@@ -1860,7 +1860,7 @@
         var _ = this, breakpoint, currentBreakpoint, l,
             responsiveSettings = _.options.responsive || null;
 
-        if ( $.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
+        if (typeof responsiveSettings === 'array' && responsiveSettings.length) {
 
             _.respondTo = _.options.respondTo || 'window';
 
@@ -2120,19 +2120,19 @@
 
         var _ = this, l, item, option, value, refresh = false, type;
 
-        if( $.type( arguments[0] ) === 'object' ) {
+        if ( typeof arguments[0] === 'object' ) {
 
             option =  arguments[0];
             refresh = arguments[1];
             type = 'multiple';
 
-        } else if ( $.type( arguments[0] ) === 'string' ) {
+        } else if ( typeof arguments[0] === 'string' ) {
 
             option =  arguments[0];
             value = arguments[1];
             refresh = arguments[2];
 
-            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
+            if (arguments[0] === 'responsive' && typeof arguments[1] === 'array' ) {
 
                 type = 'responsive';
 
@@ -2162,7 +2162,7 @@
 
             for ( item in value ) {
 
-                if( $.type( _.options.responsive ) !== 'array' ) {
+                if (typeof _.options.responsive !== 'array' ) {
 
                     _.options.responsive = [ value[item] ];
 

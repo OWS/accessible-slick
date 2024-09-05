@@ -19,11 +19,6 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         map: false,
-        processors: [
-          require('autoprefixer')({
-            browsers: ['last 2 versions'],
-          }),
-        ],
       },
       dist: {
         src: 'slick/*.min.css',
